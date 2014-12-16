@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" /> 
+    <meta name="author" content="Sandro Alves Peres" />	
+    <title>JQuery File</title>
+    <link rel="stylesheet" href="jquery.file.css" type="text/css" media="all" />       
+    <script type="text/javascript" src="jquery-1.8.3.js"></script>     
+	<script type="text/javascript" src="jquery.file.js"></script>   
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+		
+			$('#file1').file({
+                width: 350,
+                height: 30,
+                label: 'File',
+                tip_remove: 'Remove'
+            });	 
+            
+			$('#file2').file({
+                width: 180,
+                height: 26,
+                label: 'File 2',
+                tip_remove: 'Remove 2'
+            });            
+			
+		});
+	</script>
+	<style media="all">
+		body {
+			margin: 50px;
+			font-family: verdana, tahoma, sans-serif;
+			font-size: 12px;
+			color: #111222;
+		}
+		
+		.title {
+			font-size: 14px;
+			font-weight: bold;
+			color: #184E76;
+		}
+		
+		.code {
+			margin-left: 30px;
+			color: #606060;
+			margin-bottom: 20px;
+		}
+		
+		.title-rule {
+			font-size: 16px;
+			font-weight: bold;
+			color: orangered;
+		}
+		
+		.rule {
+			margin-left: 30px;
+			color: #069;
+			margin-bottom: 20px;
+		}
+        
+        .comments {
+            font-style: italic;
+            color: #808080;
+        }        
+		
+		label {
+			color: #202020;
+			vertical-align: middle;
+		}
+		
+		a {
+			text-decoration: none;
+			color: #03f;
+		}
+		
+		a:hover {
+			color: orangered;
+			text-decoration: underline;
+		}
+	</style>
+</head>
+
+<body>
+
+	<h1>JQuery File</h1>
+	<h2>Input File with good visual</h2>
+	<hr size="1" color="#c0c0c0" />
+	<p>&nbsp;</p>
+	
+	<p><input type="file" name="file1" id="file1" /></p>
+	<p>
+		<a href="javascript:void(0);" onclick="$('#file1').file('clean');">Clean</a> -        
+		<a href="javascript:void(0);" onclick="$('#file1').file('enable');">Enable</a> - 
+		<a href="javascript:void(0);" onclick="$('#file1').file('disable');">Disable</a>
+	</p>
+	
+	<p>&nbsp;</p> 
+    
+    
+	<p><input type="file" name="file2" id="file2" /></p>
+	<p>
+		<a href="javascript:void(0);" onclick="$('#file2').file('clean');">Clean</a> -        
+		<a href="javascript:void(0);" onclick="$('#file2').file('enable');">Enable</a> - 
+		<a href="javascript:void(0);" onclick="$('#file2').file('disable');">Disable</a>
+	</p>
+	
+	<p>&nbsp;</p>    
+    
+	<p class="title">Using selector jquery for all files</p>
+	<p>
+		<a href="javascript:void(0);" onclick="$('input:file').file('clean');">Clean All</a> -         
+		<a href="javascript:void(0);" onclick="$('input:file').file('enable');">Enable All</a> - 
+		<a href="javascript:void(0);" onclick="$('input:file').file('disable');">Disable All</a>
+	</p>    
+    
+	<p>&nbsp;</p>       
+    
+	<p class="title">Create</p>
+	<p class="code">
+        <span class="comments">// with default options</span><br />
+		$('input:file').file();	
+	</p>
+	<p class="code">
+        <span class="comments">// with options</span><br />	
+        $('input:file').file({
+            <br />&nbsp; &nbsp; &nbsp; &nbsp;width: 170,
+            <br />&nbsp; &nbsp; &nbsp; &nbsp;height: 26,
+            <br />&nbsp; &nbsp; &nbsp; &nbsp;label: 'File',
+            <br />&nbsp; &nbsp; &nbsp; &nbsp;tip_remove: 'Remove File'       
+        <br />}); 
+	</p>     
+	
+	<p class="title">Clean All</p>
+	<p class="code">
+		$('input:file').file('clean');	
+	</p>    
+    
+	<p class="title">Enable All</p>
+	<p class="code">
+		$('input:file').file('enable');	
+	</p>
+
+	<p class="title">Disable All</p>
+	<p class="code">
+		$('input:file').file('disable');
+    </p>	
+	
+</body>
+</html>
